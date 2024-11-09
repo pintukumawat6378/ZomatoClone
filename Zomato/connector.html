@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        .card {
+            max-width: 300px;
+            border-radius: 0.5rem;
+            background-color: #fff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            border: 2px solid black;
+        }
+
+        .card a {
+            text-decoration: none
+        }
+
+        .content {
+            padding: 1.1rem;
+        }
+
+        .image {
+            /* object-fit: cover; */
+            width: 100%;
+            height: 150px;
+        }
+
+        .title {
+            color: #111827;
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+            font-weight: 600;
+        }
+
+        .desc {
+            margin-top: 0.5rem;
+            color: #6B7280;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+
+        .action {
+            display: inline-flex;
+            margin-top: 1rem;
+            color: #ffffff;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+            font-weight: 500;
+            align-items: center;
+            gap: 0.25rem;
+            background-color: #2563EB;
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+
+        .action span {
+            transition: .3s ease;
+        }
+
+        .action:hover span {
+            transform: translateX(4px);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .btn-group {
+            margin-left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid">
+        <div class="card">
+            <div><img class="image" src="Images/pizza.jpeg" alt=""></div>
+            <div class="content">
+                <a href="#">
+                    <span class="title">
+                        Pizza
+                    </span>
+                </a>
+
+                <p class="desc">
+                    स्वस्थ भोजन, सैंडविच, फास्ट फूड, रैप्स, सलाद, पेय
+                </p>
+                <h2> ₹ 120 /-</h2>
+
+                <a class="action" href="#">
+                    Order Now
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+                <div class="btn-group" class="quantity" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="handle(this, -1)">-</button>
+                    <button type="button" class="btn btn-warning any">0</button>
+                    <button type="button" class="btn btn-success" onclick="handle(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div><img class="image" src="Images/panir.jpeg" alt=""></div>
+            <div class="content">
+                <a href="#">
+                    <span class="title">
+                        Paneer Tikka
+                    </span>
+                </a>
+
+                <p class="desc">
+                    एक बार खावोगे हजार बार ऑर्डर करोगे
+                </p>
+                <h2> ₹ 150 /-</h2>
+
+                <a class="action" href="#">
+                    Order Now
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+                <div class="btn-group" class="quantity" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="handle(this, -1)">-</button>
+                    <button type="button" class="btn btn-warning any">0</button>
+                    <button type="button" class="btn btn-success" onclick="handle(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div><img class="image" src="Images/manchurian.jpeg" alt=""></div>
+            <div class="content">
+                <a href="#">
+                    <span class="title">
+                        Manchurian
+                    </span>
+                </a>
+
+                <p class="desc">
+                    उत्तर भारतीय, चाइनीज, फास्ट फूड </p>
+                <h2> ₹ 80 /-</h2>
+
+                <a class="action" href="#">
+                    Order Now
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+                <div class="btn-group" class="quantity" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="handle(this, -1)">-</button>
+                    <button type="button" class="btn btn-warning any">0</button>
+                    <button type="button" class="btn btn-success" onclick="handle(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div><img class="image" src="Images/dal.jpeg" alt=""></div>
+            <div class="content">
+                <a href="#">
+                    <span class="title">
+                        Dal Bati
+                    </span>
+                </a>
+
+                <p class="desc">
+                    दाल बाटी चूरमा हिंदुस्तानी सूरमा
+                </p>
+                <h2> ₹ 150 /-</h2>
+
+                <a class="action" href="#">
+                    Order Now
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+                <div class="btn-group" class="quantity" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="handle(this, -1)">-</button>
+                    <button type="button" class="btn btn-warning any">0</button>
+                    <button type="button" class="btn btn-success" onclick="handle(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div><img class="image" src="Images/gujarati.jpeg" alt=""></div>
+            <div class="content">
+                <a href="#">
+                    <span class="title">
+                        Special Gujarati Thali
+                    </span>
+                </a>
+
+                <p class="desc">
+                    गुजराती खमन ढोकला स्पेशल
+                </p>
+                <h2> ₹ 180 /-</h2>
+
+                <a class="action" href="#">
+                    Order Now
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+                <div class="btn-group" class="quantity" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="handle(this, -1)">-</button>
+                    <button type="button" class="btn btn-warning any">0</button>
+                    <button type="button" class="btn btn-success" onclick="handle(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div><img class="image" src="Images/sweet.avif" alt=""></div>
+            <div class="content">
+                <a href="#">
+                    <span class="title">
+                        Bangla Sweet House
+                    </span>
+                </a>
+
+                <p class="desc">
+                    मिठाई, स्ट्रीट फूड, उत्तर भारतीय
+                </p>
+                <h2> ₹ 200 /-</h2>
+
+                <a class="action" href="#">
+                    Order Now
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+                <div class="btn-group" class="quantity" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="handle(this, -1)">-</button>
+                    <button type="button" class="btn btn-warning any">0</button>
+                    <button type="button" class="btn btn-success" onclick="handle(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div><img class="image" src="Images/burger.jpeg" alt=""></div>
+            <div class="content">
+                <a href="#">
+                    <span class="title">
+                        Burger
+                    </span>
+                </a>
+
+                <p class="desc">
+                    बर्गर, फास्ट फूड, मोमोज, पेय, डेसर्ट
+                </p>
+                <h2> ₹ 350 /-</h2>
+
+                <a class="action" href="#">
+                    Order Now
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+                <div class="btn-group" class="quantity" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="handle(this, -1)">-</button>
+                    <button type="button" class="btn btn-warning any">0</button>
+                    <button type="button" class="btn btn-success" onclick="handle(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div><img class="image" src="Images/icecream.jpeg" alt=""></div>
+            <div class="content">
+                <a href="#">
+                    <span class="title">
+                        Vanila Icecream
+                    </span>
+                </a>
+
+                <p class="desc">
+                    आइसक्रीम, डेसर्ट
+                </p>
+                <h2> ₹ 60 /-</h2>
+
+                <a class="action" href="#">
+                    Order Now
+                    <span aria-hidden="true">
+                        →
+                    </span>
+                </a>
+                <div class="btn-group" class="quantity" role="group" aria-label="Basic mixed styles example">
+                    <button type="button" class="btn btn-danger" onclick="handle(this, -1)">-</button>
+                    <button type="button" class="btn btn-warning any">0</button>
+                    <button type="button" class="btn btn-success" onclick="handle(this, 1)">+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="http://127.0.0.1:5500/index.html">My website</a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        function handle(button, increment) {
+            let countElement = button.parentElement.querySelector('.any');
+            let count = parseInt(countElement.innerText);
+            count += increment;
+            if (count >= 0) {
+                countElement.innerText = count;
+            }
+        }
+    </script>
+</body>
+
+</html>
