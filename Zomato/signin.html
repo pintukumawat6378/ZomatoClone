@@ -3,22 +3,38 @@
   <head>
     <title>Document</title>
     <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background-color: #f2f2f2;
+      }
+
       .container {
         border: solid 1px #8d8d8d;
         padding: 20px;
         border-radius: 20px;
         background-color: #fff;
-        width: 50vh;
+        width: 90%;
+        max-width: 400px;
+        margin: auto;
       }
 
       .container .heading {
         font-size: 1.3rem;
         margin-bottom: 20px;
         font-weight: bolder;
+        text-align: center;
       }
 
       .form {
-        max-width: 300px;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -28,7 +44,9 @@
         width: 100%;
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       .form .btn {
@@ -38,7 +56,6 @@
         letter-spacing: 3px;
         border-radius: 10px;
         border: solid 1px #1034aa;
-        border-bottom: solid 1px #90c2ff;
         background: linear-gradient(135deg, #0034de, #006eff);
         color: #fff;
         font-weight: bolder;
@@ -54,13 +71,13 @@
 
       .input-field {
         position: relative;
+        width: 100%;
       }
 
       .input-field label {
         position: absolute;
         color: #8d8d8d;
         pointer-events: none;
-        background-color: transparent;
         left: 15px;
         transform: translateY(0.6rem);
         transition: all 0.3s ease;
@@ -71,8 +88,7 @@
         font-size: 1rem;
         border-radius: 8px;
         border: solid 1px #8d8d8d;
-        letter-spacing: 1px;
-        /* width: 100%; */
+        width: 100%;
       }
 
       .input-field input:focus,
@@ -89,30 +105,30 @@
         color: #0034de;
         font-weight: bold;
         letter-spacing: 1px;
-        border: none;
         border-radius: 100px;
       }
 
-      .form .passicon {
-        cursor: pointer;
-        font-size: 1.3rem;
-        position: absolute;
-        top: 6px;
-        right: 8px;
-      }
-
-      .form .close {
-        display: none;
-      }
-      .a{
+      .a {
         text-decoration: none;
         color: white;
+      }
+
+      /* Responsive styles */
+      @media (min-width: 600px) {
+        .container {
+          width: 50%;
+          max-width: 400px;
+        }
+
+        .form .btn-container {
+          justify-content: flex-start;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="heading">SignIn to your account</div>
+      <div class="heading">Sign In to your account</div>
       <form class="form" action="">
         <div class="input-field">
           <input
@@ -148,7 +164,7 @@
         <div class="btn-container">
           <button class="btn" formaction="./index.html">Submit</button>
           <div class="acc-text">
-            New here ?
+            New here?
             <span style="color: #0000ff; cursor: pointer">Create Account</span>
           </div>
         </div>
